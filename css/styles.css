@@ -4,55 +4,18 @@ body {
     margin: 0;
     padding: 0;
     color: #fff;
-    background: linear-gradient(to right, #a0c4ff, #b9fbc0); /* Градиентный фон */
+    background: url('../images/header-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
     overflow-x: hidden;
-}
-
-/* Модальное окно для полноэкранного просмотра */
-.fullscreen-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.fullscreen-modal.active {
-    display: flex;
-}
-
-.fullscreen-image {
-    max-width: 90%;
-    max-height: 80%;
-    transition: transform 0.3s ease;
-}
-
-.fullscreen-modal .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.fullscreen-modal .close:hover {
-    color: #ff6347;
 }
 
 /* Навигационная панель */
 nav {
-    background-color: #1d2a7a;
+    background: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
     padding: 15px 20px;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1000;
     border-bottom: 2px solid #fff;
 }
@@ -96,14 +59,20 @@ nav a.active {
 
 /* Секция hero */
 .hero-section {
-    background-image: url('../images/header-bg.jpg');
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     color: #fff;
-    padding: 80px 20px;
     text-align: center;
-    border-bottom: 5px solid #fff;
+    padding: 0 20px;
     position: relative;
+    background: rgba(0, 0, 0, 0.4); /* Полупрозрачный фон для текста */
+}
+
+.hero-content {
+    z-index: 2;
 }
 
 .hero-section h1 {
@@ -146,14 +115,14 @@ nav a.active {
 
 /* Секция обо мне */
 .about-section {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Градиентный фон */
+    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     padding: 60px 20px;
-    color: #fff;
+    color: #333;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    margin-top: 60px; /* Оставляем пространство для навигации */
 }
 
 .about-section::before {
@@ -174,8 +143,8 @@ nav a.active {
 
 .profile-image {
     border-radius: 50%;
-    width: 180px;
-    height: 180px;
+    width: 150px; /* Уменьшили размер изображения */
+    height: 150px;
     object-fit: cover;
     margin-bottom: 20px;
     border: 5px solid #fff;
@@ -200,12 +169,14 @@ nav a.active {
     padding: 60px 20px;
     background: #fff;
     color: #333;
+    text-align: center;
 }
 
 .portfolio-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    overflow-x: auto;
 }
 
 .portfolio-table th, .portfolio-table td {
@@ -219,7 +190,7 @@ nav a.active {
 }
 
 .portfolio-table img {
-    max-width: 100px;
+    max-width: 80px; /* Уменьшили размер изображения */
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
