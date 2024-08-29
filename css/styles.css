@@ -1,75 +1,278 @@
+/* Общие стили */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     color: #fff;
-    background: url('images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: linear-gradient(to right, #a0c4ff, #b9fbc0); /* Градиентный фон */
+    overflow-x: hidden;
 }
 
-header {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    text-align: center;
+/* Модальное окно для полноэкранного просмотра */
+.fullscreen-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-modal.active {
+    display: flex;
+}
+
+.fullscreen-image {
+    max-width: 90%;
+    max-height: 80%;
+    transition: transform 0.3s ease;
+}
+
+.fullscreen-modal .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fullscreen-modal .close:hover {
+    color: #ff6347;
+}
+
+/* Навигационная панель */
+nav {
+    background-color: #1d2a7a;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #fff;
 }
 
 nav ul {
+    display: flex;
+    justify-content: center;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
     font-size: 1.2em;
-}
-
-.hero-section {
-    padding: 50px 20px;
-    color: #fff;
-}
-
-.portfolio-gallery img {
-    width: 100%;
-    max-width: 300px;
-    margin: 10px;
-    border-radius: 10px;
-}
-
-.portfolio-category {
-    margin: 20px 0;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    max-width: 500px;
-    margin: 10px 0;
-}
-
-.contact-form button {
+    font-weight: 500;
     padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+nav a:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+nav a.active {
+    background: #fff;
+    color: #1d2a7a;
+    font-weight: 700;
+}
+
+/* Секция hero */
+.hero-section {
+    background-image: url('../images/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 5px solid #fff;
+    position: relative;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin: 0;
+    font-weight: 700;
+    animation: fadeIn 2s ease-out;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin: 20px 0 0;
+    font-weight: 300;
+}
+
+.hero-section .btn-main {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
     font-size: 1.2em;
     color: #fff;
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
     border: none;
     border-radius: 25px;
-    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.hero-section .btn-main:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Эффект плавного появления текста */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Секция обо мне */
+.about-section {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Градиентный фон */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 60px 20px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.about-content p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.2em;
+}
+
+/* Секция портфолио */
+.portfolio-section {
+    padding: 60px 20px;
+    background: #fff;
+    color: #333;
+}
+
+.portfolio-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.portfolio-table th, .portfolio-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.portfolio-table th {
+    background-color: #f4f4f4;
+}
+
+.portfolio-table img {
+    max-width: 100px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Секция контактов */
+.contact-section {
+    background: #1d2a7a;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 15px 20px;
+    background-color: #ff7e5f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #feb47b;
+    transform: scale(1.05);
+}
+
+/* Подвал */
 footer {
     background-color: #1d2a7a;
     color: #fff;
-    padding: 20px;
     text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Фоновая музыка */
+audio#bg-music {
+    display: none;
 }

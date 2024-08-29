@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Станислава</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#hero" class="active">Главная</a></li>
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#portfolio">Портфолио</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+    <header class="hero-section" id="hero">
+        <h1>Привет! Я Станислав</h1>
+        <p>Веб-дизайнер, Программист, Разработчик ботов</p>
+        <a href="#contact" class="btn-main">Связаться со мной</a>
+    </header>
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <img src="images/profile.jpg" alt="Профильное фото" class="profile-image">
+            <h2>Обо мне</h2>
+            <p>Меня зовут Станислав, мне 18 лет. Я студент 3 курса Железнодорожного Университета города Харьков на момент 29.08.2024 года. Выпускник академии ITStep по сфере Python и разработка программ, сайтов. В данный момент пишу, когда есть время, сайты, телеграм/дискорд ботов.</p>
+        </div>
+    </section>
+    <section class="portfolio-section" id="portfolio">
+        <h2>Мои работы</h2>
+        <table class="portfolio-table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Название</th>
+                    <th>Изображение</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Пример строк, данные можно добавить в script.js -->
+            </tbody>
+        </table>
+    </section>
+    <section class="contact-section" id="contact">
+        <h2>Связаться со мной</h2>
+        <form id="contactForm" class="contact-form">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Ваш email" required>
+            <textarea name="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Станислав. Все права защищены.</p>
+    </footer>
+    <audio id="bg-music" loop>
+        <source src="music/background.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает элемент audio.
+    </audio>
+</body>
+</html>
