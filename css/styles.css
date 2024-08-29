@@ -1,0 +1,75 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.hero-section {
+    padding: 50px 20px;
+    color: #fff;
+}
+
+.portfolio-gallery img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.portfolio-category {
+    margin: 20px 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px 0;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #1d2a7a;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
